@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 input=jyutping-table/list.tsv
 output=jyut6ping3.char.dict.yaml
 

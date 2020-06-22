@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 input=jyutping-table/list.tsv
 output=ordered.tsv
 
