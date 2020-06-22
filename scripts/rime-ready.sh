@@ -4,17 +4,15 @@ output=jyut6ping3.char.dict.yaml
 cat <<EOF > a.tmp
 # Rime dict
 # encoding: utf-8
-
+# 取自: LSHK字表 <https://github.com/lshk-org/jyutping-table/>
 ---
 name: jyut6ping3.char
 version: "$( date +%Y.%m.%d )"
-sort: by_weight
 columns:
   - text
   - code
   - weight
 ...
-
 EOF
 
 awk '
@@ -30,7 +28,7 @@ awk '
   }
 ' $input > b.tmp
 
-/usr/bin/sort -k2,2 -k1,1 -k3,3 -o b.tmp b.tmp
+LC_ALL="zh_HK.utf8" /usr/bin/sort -k1,1 -k3,3gr -k2,2 -o b.tmp b.tmp
 
 cat a.tmp b.tmp > $output
 rm a.tmp b.tmp
