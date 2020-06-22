@@ -29,7 +29,7 @@ awk '
   }
 ' $input > b.tmp
 
-LC_ALL="zh_HK.utf8" /usr/bin/sort -k1,1 -k3,3gr -k2,2 -o b.tmp b.tmp
+LC_ALL="zh_HK.utf8" /usr/bin/sort -k2,2 -k3,3gr -k1,1 -o b.tmp b.tmp
 
 cat a.tmp b.tmp > $output
 rm a.tmp b.tmp
