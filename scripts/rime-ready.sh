@@ -17,12 +17,6 @@ columns:
 EOF
 
 awk '
-  function abs(v) {
-    return v < 0 ? -v : v
-  }
-  BEGIN{
-
-  }
   ($0!="CH	UCODE	JP	INIT	FINL	TONE") {
       if(!x[$1]) x[$1]=1000
       printf "%s\t%s\t%d\n", $1, $3, x[$1]--

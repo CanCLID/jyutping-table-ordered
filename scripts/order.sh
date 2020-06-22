@@ -3,7 +3,6 @@ input=jyutping-table/list.tsv
 output=ordered.tsv
 
 awk '
-  function abs(v) {return v < 0 ? -v : v}
   {
     if($0=="CH	UCODE	JP	INIT	FINL	TONE")
       print "CH	UCODE	JP	INIT	FINL	TONE	ORDR"
